@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server",
+    "lint": "eslint .src/",
+    "lint:fix": "eslint .src/ --fix --color"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,27 @@
   "bugs": {
     "url": "https://github.com/katiandrews/replace-bg-service/issues"
   },
-  "homepage": "https://github.com/katiandrews/replace-bg-service#readme"
+  "homepage": "https://github.com/katiandrews/replace-bg-service#readme",
+  "dependencies": {
+    "backrem": "^1.0.4",
+    "express": "^4.17.1",
+    "nanoid": "^3.1.28"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  }
 }
