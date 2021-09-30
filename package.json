@@ -1,0 +1,24 @@
+{
+  "name": "replace-bg-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katiandrews/replace-bg-service.git"
+  },
+  "keywords": [
+    "node.js",
+    "service",
+    "express"
+  ],
+  "author": "katiandrews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katiandrews/replace-bg-service/issues"
+  },
+  "homepage": "https://github.com/katiandrews/replace-bg-service#readme"
+}
