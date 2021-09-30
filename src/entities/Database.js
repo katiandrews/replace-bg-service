@@ -9,6 +9,11 @@ class Database extends EventEmitter {
   insert(img) {
     this.idToImg[img.id] = img;
   }
+
+  find() {
+    const allImages = Object.values(this.idToImg);
+    return allImages;
+  }
 }
 
 const db = new Database();

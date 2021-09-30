@@ -2,7 +2,7 @@ const upload = require('../utils/createStorage');
 const db = require('../entities/Database');
 const Img = require('../entities/Img');
 
-module.exports = async (req, res) => {
+module.exports = (req, res) => {
   upload.single('image')(req, res, function (err) {
     try {
       if (err) {
@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
       const jpegImg = new Img(req.file.filename, req.file.size);
       db.insert(jpegImg);
 
-      res.end(jpegImg.id);
+      return res.end(jpegImg.id);
     } catch (error) {
       return res.status(400).end(error.message);
     }
