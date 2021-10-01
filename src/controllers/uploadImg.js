@@ -14,7 +14,7 @@ module.exports = (req, res) => {
       const jpegImg = new Img(req.file.filename, req.file.size);
       db.insert(jpegImg);
 
-      return res.end(jpegImg.id);
+      return res.json({ id: jpegImg.id });
     } catch (error) {
       return res.status(400).end(error.message);
     }
