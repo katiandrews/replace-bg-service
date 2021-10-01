@@ -1,4 +1,5 @@
 const { EventEmitter } = require('events');
+const { unlink } = require('fs/promises');
 
 class Database extends EventEmitter {
   constructor() {
@@ -15,7 +16,10 @@ class Database extends EventEmitter {
     return allImages;
   }
 
-  deleteOne(id) {}
+  async deleteOne(id, filepath) {
+    await unlink(filepath);
+    delete this.idToImg[id];
+  }
 }
 
 const db = new Database();
