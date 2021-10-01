@@ -8,9 +8,13 @@ app.use(express.json());
 
 const server = http.createServer(app);
 
+app.get('/list', api.getImages);
+
 app.post('/upload', api.uploadImg);
 
-app.get('/list', api.getImages);
+app.get('/image/:id', api.downloadImg);
+
+app.delete('/image/:id', api.deleteImg);
 
 server.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);

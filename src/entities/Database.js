@@ -14,6 +14,8 @@ class Database extends EventEmitter {
     const allImages = Object.values(this.idToImg);
     return allImages;
   }
+
+  deleteOne(id) {}
 }
 
 const db = new Database();

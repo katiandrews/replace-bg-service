@@ -10,10 +10,6 @@ module.exports = class Img {
     this.createdAt = createdAt || Date.now();
   }
 
-  // async saveFile() {
-  //   await fs.writeFile(path.resolve(imgFolder, this.originalFilename));
-  // }
-
   toJSON() {
     return {
       id: this.id,
