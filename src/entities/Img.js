@@ -4,7 +4,7 @@ module.exports = class Img {
   constructor(id, size, createdAt) {
     this.id = id || generateId();
     this.size = size || 0;
-    this.createdAt = createdAt || new Date();
+    this.createdAt = createdAt || Date.now();
   }
 
   toJSON() {

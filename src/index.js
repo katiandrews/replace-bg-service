@@ -16,10 +16,7 @@ app.get('/image/:id', api.downloadImg);
 
 app.delete('/image/:id', api.deleteImg);
 
-app.get(
-  '/merge?front=<id>&back=<id>&color=145,54,32&threshold=5',
-  api.replaceBg
-);
+app.get('/merge', api.replaceBg);
 
 server.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);

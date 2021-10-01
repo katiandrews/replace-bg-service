@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/katiandrews/replace-bg-service#readme",
   "dependencies": {
-    "backrem": "^1.0.4",
+    "backrem": "^1.1.0",
     "express": "^4.17.1",
     "multer": "^1.4.3",
     "nanoid": "^3.1.28",
