@@ -5,13 +5,8 @@ const { imgFolder } = require('../config/index');
 module.exports = (req, res) => {
   try {
     const { id } = req.params;
-    if (
-      !id ||
-      (id.includes('.jpeg') === false && id.includes('.jpg') === false)
-    ) {
-      return res
-        .status(400)
-        .json('Filename should be provided and end with .jpg or .jpeg');
+    if (!id) {
+      return res.status(400).json('Filename should be provided');
     }
 
     const filepath = path.resolve(imgFolder, id);
