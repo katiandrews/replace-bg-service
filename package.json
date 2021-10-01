@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/",
-    "lint": "eslint .src/",
-    "lint:fix": "eslint .src/ --fix --color"
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix --color"
   },
   "repository": {
     "type": "git",

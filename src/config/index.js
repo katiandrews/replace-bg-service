@@ -1,6 +1,5 @@
 const path = require('path');
-
-const dbFolder = path.resolve(__dirname, '../../db/');
+const dbFolder = path.resolve('db');
 const imgFolder = path.resolve(dbFolder, 'img');
 
 module.exports = {

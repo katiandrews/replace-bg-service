@@ -1,5 +1,6 @@
 const path = require('path');
 const { access, constants } = require('fs');
+const { imgFolder } = require('../config/index');
 
 module.exports = (req, res) => {
   try {
@@ -13,8 +14,7 @@ module.exports = (req, res) => {
         .json('Filename should be provided and end with .jpg or .jpeg');
     }
 
-    const filepath = path.resolve('db/img/' + id);
-
+    const filepath = path.resolve(imgFolder, id);
     access(filepath, constants.F_OK, (err) => {
       if (err) return res.status(404).json('File not found');
     });
