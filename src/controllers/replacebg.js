@@ -1,5 +1,5 @@
 const path = require('path');
-const { createReadStream } = require('fs');
+const { createReadStream, createWriteStream } = require('fs');
 const { imgFolder } = require('../config/index');
 const { replaceBackground } = require('backrem');
 
@@ -19,8 +19,10 @@ module.exports = (req, res) => {
     }
     const frontImage = createReadStream(path.resolve(imgFolder, front));
     const backImage = createReadStream(path.resolve(imgFolder, back));
+
     replaceBackground(frontImage, backImage, color, threshold).then(
       (readableStream) => {
+        res.attachment(`${front}`);
         readableStream.pipe(res);
       }
     );
