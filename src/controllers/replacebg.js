@@ -1,5 +1,5 @@
 const path = require('path');
-const { createReadStream, createWriteStream } = require('fs');
+const { createReadStream } = require('fs');
 const { imgFolder } = require('../config/index');
 const { replaceBackground } = require('backrem');
 

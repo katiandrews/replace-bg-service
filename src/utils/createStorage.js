@@ -18,7 +18,7 @@ const fileFilter = (req, file, cb) => {
   } else if (file.mimetype === 'image/png') {
     cb(null, true);
   } else {
-    cb(new Error('File format should be JPEG'), false);
+    cb(new Error('File format should be JPEG or PNG'), false);
   }
 };
 

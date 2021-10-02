@@ -12,7 +12,7 @@ API replaces color-bg on images to another background image
 
 ## Usage
 
-# Upload image
+### Upload image
 
 - POST /upload, Content-Type: multipart/form-data;
 - Success response:
